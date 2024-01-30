@@ -8,9 +8,9 @@
     <meta property="og:url" content="https://belovnow.github.io/eralash-counter/" />
     <meta property="og:title" content="Не забудем Ералаша" />
     <meta property="og:description"
-    content="Страница памяти великого Ералаша, которому разорвали очко" />
+    content="Страница памяти великого Ералаша, которому поднял всю инфраструктуру мира" />
     <meta property="og:image"
-    content="https://raw.githubusercontent.com/belovnow/eralash-counter/main/og_preview.png" />
+    content="https://raw.githubusercontent.com/belovnow/eralash-counter/main/og_preview_new.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Не забудем Ералаша</title>
 </head>
@@ -18,7 +18,7 @@
 <body>
     <div class="wrapper">
         <div class="text">Помним</div class="text">
-        <img width="256" src="eralash.jpg">
+        <img id="image" width="256" src="eralash.jpg">
         <div id="counter" class="text"></div>
     </div>
 </body>
@@ -49,7 +49,12 @@
     }
 </style>
 <script>
-    document.addEventListener("DOMContentLoaded", () => renderCounter());
+    document.addEventListener("DOMContentLoaded", () => renderApp());
+
+    function renderApp() {
+        renderCounter();
+        handleImageHover();
+    }
 
     function renderCounter() {
         const div = document.getElementById("counter");
@@ -57,6 +62,12 @@
         const diffTime = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()) - start;
         const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
         div.textContent = `${diffDays} дней`;
+    }
+
+    function handleImageHover() {
+        const img = document.getElementById("image");
+        img.onmouseenter = () => img.src = "photo.jpg";
+        img.onmouseleave = () => img.src = "eralash.jpg";
     }
 </script>
 
