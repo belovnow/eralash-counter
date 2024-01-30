@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Не забудем Ералаша</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="text">Помним</div class="text">
+        <img width="256" src="images/eralash.jpg">
+        <div id="counter" class="text"></div>
+    </div>
+</body>
+<style>
+    * {
+        font-family: serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .text {
+        font-size: 32px;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => renderCounter());
+
+    function renderCounter() {
+        const div = document.getElementById("counter");
+        const start = new Date(2024, 1, 1);
+        const diffTime = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()) - start;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        div.textContent = `${diffDays} дней`;
+    }
+</script>
+
+</html>
