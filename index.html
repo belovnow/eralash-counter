@@ -19,7 +19,7 @@
 <body>
     <div class="wrapper">
         <div class="text">Помним</div class="text">
-        <img id="image" width="256" src="eralash.jpg">
+        <img id="image" width="256" src="public/images/eralash.jpg">
         <div id="counter" class="text"></div>
         <button id="notifications">Нотификация</button>
         <button id="vibro">Вибро</button>
@@ -70,12 +70,12 @@
     function handleImageHover() {
         const img = document.getElementById("image");
         if (isTouchDevice()) {
-            img.ontouchstart = () => img.src = "photo.jpg";
-            img.ontouchend = () => img.src = "eralash.jpg";
+            img.ontouchstart = () => img.src = "public/images/photo.jpg";
+            img.ontouchend = () => img.src = "public/images/eralash.jpg";
         }
         else {
-            img.onmouseenter = () => img.src = "photo.jpg";
-            img.onmouseleave = () => img.src = "eralash.jpg";
+            img.onmouseenter = () => img.src = "public/images/photo.jpg";
+            img.onmouseleave = () => img.src = "public/images/eralash.jpg";
         }
 
     }
@@ -101,7 +101,7 @@
     function randomNotification() {
         const notifTitle = "Тест титл";
         const notifBody = "Тест бади";
-        const notifImg = "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png";
+        const notifImg = "public/icons/icon.png";
         const options = {
             body: notifBody,
             icon: notifImg,
