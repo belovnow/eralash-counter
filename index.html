@@ -8,9 +8,9 @@
     <meta property="og:url" content="https://belovnow.github.io/eralash-counter/" />
     <meta property="og:title" content="Не забудем Ералаша" />
     <meta property="og:description"
-    content="Страница памяти великого Ералаша, который поднял всю инфраструктуру мира" />
+        content="Страница памяти великого Ералаша, который поднял всю инфраструктуру мира" />
     <meta property="og:image"
-    content="https://raw.githubusercontent.com/belovnow/eralash-counter/main/og_preview_new.png" />
+        content="https://raw.githubusercontent.com/belovnow/eralash-counter/main/og_preview_new.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="manifest" href="manifest.json" />
     <title>Не забудем Ералаша</title>
@@ -21,6 +21,7 @@
         <div class="text">Помним</div class="text">
         <img id="image" width="256" src="eralash.jpg">
         <div id="counter" class="text"></div>
+        <button id="notifications">Нотификация</button>
     </div>
 </body>
 <style>
@@ -75,14 +76,34 @@
             img.onmouseenter = () => img.src = "photo.jpg";
             img.onmouseleave = () => img.src = "eralash.jpg";
         }
-        
+
     }
 
     function isTouchDevice() {
-            return ( 'ontouchstart' in window ) || 
-                   ( navigator.maxTouchPoints > 0 ) ||
-                   ( navigator.msMaxTouchPoints > 0 );
-        }
+        return ('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0);
+    }
+
+    const button = document.getElementById("notifications");
+    button.addEventListener("click", () => {
+        Notification.requestPermission().then((result) => {
+            if (result === "granted") {
+                randomNotification();
+            }
+        });
+    });
+
+    function randomNotification() {
+        const notifTitle = "Тест титл";
+        const notifBody = "Тест бади";
+        const notifImg = "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png";
+        const options = {
+            body: notifBody,
+            icon: notifImg,
+        };
+        new Notification(notifTitle, options);
+    }
 </script>
 
 </html>
