@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://belovnow.github.io/eralash-counter/" />
+    <meta property="og:title" content="Не забудем Ералаша" />
+    <meta property="og:description"
+        content="Страница памяти великого Ералаша, который поднял всю инфраструктуру мира" />
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/belovnow/eralash-counter/main/og_preview_new.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Не забудем Ералаша</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="text">Помним</div class="text">
+        <img id="image" width="256" src="eralash.jpg">
+        <div id="counter" class="text"></div>
+        <button id="notifications">Нотификация</button>
+        <button id="vibro">Вибро</button>
+    </div>
+</body>
+<style>
+    * {
+        font-family: serif;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+        color: white;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .text {
+        font-size: 32px;
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", () => renderApp());
+
+    function renderApp() {
+        renderCounter();
+        handleImageHover();
+    }
+
+    function renderCounter() {
+        const div = document.getElementById("counter");
+        const start = new Date(2024, 1, 1);
+        const diffTime = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()) - start;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        div.textContent = `${diffDays} дней`;
+    }
+
+    function handleImageHover() {
+        const img = document.getElementById("image");
+        if (isTouchDevice()) {
+            img.ontouchstart = () => img.src = "photo.jpg";
+            img.ontouchend = () => img.src = "eralash.jpg";
+        }
+        else {
+            img.onmouseenter = () => img.src = "photo.jpg";
+            img.onmouseleave = () => img.src = "eralash.jpg";
+        }
+
+    }
+
+    function isTouchDevice() {
+        return ('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0);
+    }
+
+    const button = document.getElementById("notifications");
+    button.addEventListener("click", () => {
+        Notification.requestPermission().then((result) => {
+            if (result === "granted") {
+                randomNotification();
+            }
+        });
+    });
+
+    const buttonVibro = document.getElementById("vibro");
+    buttonVibro.addEventListener("click", () => navigator.vibrate(200));
+
+    function randomNotification() {
+        const notifTitle = "Тест титл";
+        const notifBody = "Тест бади";
+        const notifImg = "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png";
+        const options = {
+            body: notifBody,
+            icon: notifImg,
+        };
+        new Notification(notifTitle, options);
+    }
+
+
+</script>
+
+</html>

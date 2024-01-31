@@ -1,15 +1,16 @@
 {
-    "name": "Ералаша не забудем",
-    "start_url": "index.html",
-    "display": "standalone",
-    "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
-    "orientation": "portrait-primary",
-    "form_factor": "wide",
-    "icons": [
-      {
-        "src": "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png",
-        "type": "image/png", "sizes": "144x144"
-      }
-    ]
-  }
+  "name": "Ералаша не забудем",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fdfdfd",
+  "theme_color": "#db4938",
+  "orientation": "portrait-primary",
+  "form_factor": "wide",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    }
+  ]
+}
