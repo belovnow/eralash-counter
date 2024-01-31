@@ -1,5 +1,5 @@
 * {
-  font-family: serif;
+  font-family: 'PT Serif', serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -8,17 +8,23 @@
 body {
   background-color: black;
   color: white;
+  padding: 16px;
 }
 
-.wrapper {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
+img {
+  width: 100%;
+  margin-bottom: 8px;
+  pointer-events: unset;
+  display: block;
 }
 
-.text {
+#counter {
+  font-size: 48px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.quoute {
   font-size: 32px;
+  font-style: italic;
 }
