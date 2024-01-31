@@ -22,6 +22,7 @@
         <img id="image" width="256" src="eralash.jpg">
         <div id="counter" class="text"></div>
         <button id="notifications">Нотификация</button>
+        <button id="vibro">Вибро</button>
     </div>
 </body>
 <style>
@@ -94,6 +95,9 @@
         });
     });
 
+    const buttonVibro = document.getElementById("vibro");
+    buttonVibro.addEventListener("click", () => navigator.vibrate(200));
+
     function randomNotification() {
         const notifTitle = "Тест титл";
         const notifBody = "Тест бади";
@@ -104,6 +108,8 @@
         };
         new Notification(notifTitle, options);
     }
+
+    
 </script>
 
 </html>
