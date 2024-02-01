@@ -22,7 +22,7 @@ img {
   font-size: 48px;
   font-weight: bold;
   font-style: italic;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .badge {
@@ -47,7 +47,7 @@ button {
   color: tomato;
   font-weight: 400;
   background: none;
-  border-bottom: 1px solid tomato;
+  border-bottom: 1px solid #ff634780;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
