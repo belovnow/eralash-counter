@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => renderApp());
 
 function renderApp() {
   renderCounter();
+  addShareEvent();
 }
 
 function renderCounter() {
@@ -31,9 +32,19 @@ function dayWordGenerator(days) {
   }
 }
 
-
 function isTouchDevice() {
   return ('ontouchstart' in window) ||
     (navigator.maxTouchPoints > 0) ||
     (navigator.msMaxTouchPoints > 0);
+}
+
+function addShareEvent() {
+  const shareData = {
+    title: "Не забудем Нуралаша",
+    text: "Давайте пацаны слово дадим, что Нуралаша не забудем",
+    url: "https://nuralash.ru/",
+  };
+
+  const btn = document.querySelector(".button-container");
+  btn.addEventListener("click", async () => await navigator.share(shareData));
 }
