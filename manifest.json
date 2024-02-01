@@ -1,15 +1,17 @@
 {
-    "name": "Ералаша не забудем",
-    "start_url": "index.html",
-    "display": "standalone",
-    "background_color": "#fdfdfd",
-    "theme_color": "#db4938",
-    "orientation": "portrait-primary",
-    "form_factor": "wide",
-    "icons": [
-      {
-        "src": "https://raw.githubusercontent.com/belovnow/eralash-counter/main/icon.png",
-        "type": "image/png", "sizes": "144x144"
-      }
-    ]
-  }
+  "name": "Нуралаш",
+  "description": "Давайте пацаны слово дадим, что Нуралаша не забудем",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "form_factor": "wide",
+  "icons": [
+    {
+      "src": "public/icons/pwa_icon_512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
