@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => renderApp());
 
 function renderApp() {
   renderCounter();
-  handleImageHover();
 }
 
 function renderCounter() {
@@ -32,17 +31,6 @@ function dayWordGenerator(days) {
   }
 }
 
-function handleImageHover() {
-  const img = document.getElementById("image");
-  if (isTouchDevice()) {
-    img.ontouchstart = () => img.src = "public/images/photo.jpg";
-    img.ontouchend = () => img.src = "public/images/eralash.jpg";
-  }
-  else {
-    img.onmouseenter = () => img.src = "public/images/photo.jpg";
-    img.onmouseleave = () => img.src = "public/images/eralash.jpg";
-  }
-}
 
 function isTouchDevice() {
   return ('ontouchstart' in window) ||
