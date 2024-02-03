@@ -25,7 +25,7 @@ function dayWordGenerator(days) {
       if (days > 10 && strDays[strDays.length - 2] === "1")
         return "дней";
       return "день";
-    case "2":
+    case "2" || "3" || "4":
       return "дня";
     default:
       return "дней";
