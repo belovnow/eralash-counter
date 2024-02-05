@@ -19,13 +19,13 @@ function dayWordGenerator(days) {
   const strDays = days.toString();
   const lastChar = strDays[strDays.length - 1];
   switch (lastChar) {
-    case "0" || "5" || "6" || "7" || "8" || "9":
+    case "0", "5", "6", "7", "8", "9":
       return "дней"
     case "1":
       if (days > 10 && strDays[strDays.length - 2] === "1")
         return "дней";
       return "день";
-    case "2" || "3" || "4":
+    case "2", "3", "4":
       return "дня";
     default:
       return "дней";
